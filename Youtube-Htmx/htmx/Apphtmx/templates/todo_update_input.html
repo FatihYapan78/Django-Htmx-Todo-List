@@ -1,0 +1,5 @@
+<form hx-post="{% url 'todo_update' todo.id %}" hx-trigger="submit" hx-target="#todo_list" hx-swap="outherHTML">
+    {% csrf_token %}
+    <input type="text" name="text" class="form-control" value="{{ todo.text }}">
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>

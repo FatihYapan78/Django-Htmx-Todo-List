@@ -1,0 +1,8 @@
+
+{% for todo in todos %}
+<li>{{ todo.text }}
+    <button class="btn btn-primary" hx-get="{% url 'todo_update' todo.id %}" hx-trigger="click" hx-target="#todo_list" hx-swap="outherHTML">Edit</button>
+    <button class="btn btn-danger" hx-get="{% url 'todo_delete' todo.id %}" hx-trigger="click" hx-target="#todo_list" hx-swap="outherHTML" hx-confirm="{{ todo.text }} silmek istiyor musun?">Sil</button>
+</li>
+{% endfor %}
+    
